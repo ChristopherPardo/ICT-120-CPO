@@ -5,15 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/" method="post">
+    <form action="/" method="post" id = "bal">
         First name:<br>
         <input type="text" name="firstname" value="Mickey"><br>
         Last name:<br>
         <input type="text" name="lastname" value="Mouse"><br>
         Fonction:<br>
-        <input type="text" name="fonction" value="terroriste"><br><br>
+        <input id=chkTerrorist type="text" name="fonction" value="terrorist"><br>
+        test:<br>
+        <input  id = test1 type="checkbox" name="test" value="Test"><br><br>
         <input type="submit" value="Submit">
     </form>
+    <script>
+        function hello(){
+            alert("Test")
+        }
+        function warning(){
+            alert("Fais attention !")
+        }
+        function dep(){
+            bel.height = 2;
+        }
 
+        test1.addEventListener("click", hello);
+        test1.addEventListener("mouseover", dep);
+
+       /* firstname = "Wesh";
+        lastname = "Bros";
+        age = prompt("Dit ton age " + firstname + lastname)
+        if(age < 30){
+            alert("tu fais quoi Mademoiselle ? " + firstname + lastname);
+        }
+        else{
+            alert("tu fais quoi Madame ? " + firstname + lastname);
+        }*/
+
+    </script>
 </body>
 </html>
