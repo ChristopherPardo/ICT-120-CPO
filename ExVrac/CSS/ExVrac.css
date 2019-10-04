@@ -7,5 +7,11 @@ div {
 
 .div1{
     background: blue;
-
+    text-decoration: line-through;
+}
+.div3{
+    font-family: Arial;
+}
+.div4{
+    background-color: green;
 }
