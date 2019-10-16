@@ -1,9 +1,34 @@
-window.onload=function(){
-	canv=document.getElementById("gc");
-	ctx=canv.getContext("2d");
-	document.addEventListener("keydown",keyPush);
-	setInterval(game,1000/15);
+/*window.onload=function(){
+	if(CBClasic.checked || CBRev.checked){
+		alert("test");
+		GameBord.hidden = false;
+		Choice.hidden = true;
+		canv=document.getElementById("gc");
+		ctx=canv.getContext("2d");
+		document.addEventListener("keydown",keyPush);
+		setInterval(game,1000/15);
 	}
+}*/
+//window.onload=function(){
+
+//TROUVER UN EVENT QUI FONCTIONNE POUR LE CHECKED DES TEXTBOX
+	CBClasic.addEventListener("click",Load);
+	CBRev.addEventListener("click",Load);
+//}
+function Load(){
+if (CBClasic.checked) {
+	mode = 1;
+}
+else if(CBRev.checked){
+	mode = 2;
+}
+GameBord.hidden = false;
+Choice.hidden = true;
+canv=document.getElementById("gc");
+ctx=canv.getContext("2d");
+document.addEventListener("keydown",keyPush);
+setInterval(game,1000/15);
+}
   px=py=10;
   gs=tc=20;
   ax=ay=15;
@@ -33,7 +58,12 @@ window.onload=function(){
 		for(var i=0;i<trail.length;i++){
 			ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 			if(trail[i].x ==px && trail[i].y==py){
-				tail = 20;
+				if (mode == 1) {
+					tail = 5;
+				}
+				else if (mode == 2) {
+					tail = 20;
+				}
 			}
 		}
 		trail.push({x:px,y:py});
@@ -42,7 +72,12 @@ window.onload=function(){
 		}
 
 		if(ax == px && ay == py && tail != 0){
+			if (mode == 1) {
+				tail++;
+			}
+			else if (mode == 2) {
 				tail--;
+			}
 				ax=Math.floor(Math.random()*tc);
 				ay=Math.floor(Math.random()*tc);
 			}
