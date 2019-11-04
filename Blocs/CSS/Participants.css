@@ -1,0 +1,10 @@
+/*#Content_Foot{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}*/
+
+html, body {
+    height: 100%;
+}

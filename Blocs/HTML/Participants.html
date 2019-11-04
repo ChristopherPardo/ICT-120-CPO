@@ -3,55 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/Participants.css"/>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css">
 </head>
 <body>
-<div id="Banner" class="col-12 alert alert-primary m-0">
-    <img src="../IMG/logo2lignes_vert.png" height="55" width="109.75"/>
+<div id="title" class="row col-12 alert alert-primary m-0">
+    <img src="../IMG/logo2lignes_vert.png" id="Title_Logo" height="55" width="109.75"/>
     Banner
 </div>
 <div id="Menu" class="col-12 alert alert-secondary m-0">
-    <button type="button" class="btn">Menu</button>
-    <button type="button" class="btn">Menu</button>
-    <button type="button" class="btn">Menu</button>
+    <center>
+        <button  id="Bt_Menu" type="button" class="btn">Menu</button>
+        <button id="Bt_Informations" type="button" class="btn">Informations</button>
+        <button id="Bt_Contacts" type="button" class="btn">Contacts</button>
+    </center>
 </div>
 <div class="row">
-    <div id="Media" class="col-2 alert alert-warning">
+    <div id="Media" class="h-100 col-2 alert alert-warning">
         Media <br>
         <img src="../Silhouette-Portrait-Male.png" width="50%" height="50%">
         <img src="../Silhouette-Portrait-Male.png" width="50%" height="50%">
         <img src="../Silhouette-Portrait-Male.png" width="50%" height="50%">
     </div>
     <div id="Content" class="col-10 alert alert-success">
-        <div id="Content_Menu" class="col-12 alert alert-info">
+        <div id="Content_Menu" class="modal-header col-12 alert alert-info">
           Menu Content
           <SELECT name="nom" size="1">
-            <OPTION>Lundi
-            <OPTION>mardi
-            <OPTION>mercredi
-            <OPTION>jeudi
-            <OPTION>vendredi
+            <OPTION>All the members
+            <OPTION>Maturity
+            <OPTION>CFC
+            <OPTION>Class A
+            <OPTION>Class B
           </SELECT>
-          <button type="button" class="btn-default">Add a person</button>
+          <button id="Bt_AddPerson" type="button" class="btn-default">Add a person</button>
         </div>
         <div id="Content_Content">
         Content <br>
-        <input type="checkbox"> Name Firstname email
+            <table>
+                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><img src=""></td></tr>
+                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span class="glyphicon glyphicon-pencil"></span></td></tr>
+                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span class="glyphicon glyphicon-pencil"></span></td></tr>
+                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span class="glyphicon glyphicon-pencil"></span></td></tr>
+            </table>
         </div>
-        <div id="Conten_foot" class="col-12 alert alert-info">
+        <div id="Content_Foot" class="modal-footer alert alert-info">
           foot
-          <button type="button" class="btn-default">Send a Email</button>
-          <button type="button" class="btn-default">Delet</button>
+          <button id="Bt_SendMail" type="button" class="btn-default">Send a Email</button>
+          <button id="Bt_Del" type="button" class="btn-default">Delete</button>
         </div>
     </div>
 </div>
 
+
 </body>
+<script src="../JS/Participants.js"></script>
 </html>
