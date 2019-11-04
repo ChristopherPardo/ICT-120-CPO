@@ -38,23 +38,23 @@ function Ex7AVosM() {
     AVosM.disabled = true;
     Pret.disabled = false;
     Partez.disabled = true;
-    img7.src = "../img/marks.png";
+    img7.src = "img/marks.png";
 }
 function Ex7Pret() {
     AVosM.hidden = true;
     Pret.disabled = true;
     Partez.disabled = false;
     Partez.hidden = false;
-    img7.src = "../img/set.png";
+    img7.src = "img/set.png";
 }
 function Ex7Partez() {
     Pret.hidden = true;
     Partez.disabled = true;
-    img7.src = "../img/go.png";
+    img7.src = "img/go.png";
     setTimeout(Ex7Fin,3000);
 }
 function Ex7Fin() {
-    img7.src = "../img/empty.png";
+    img7.src = "img/empty.png";
     AVosM.hidden = false;
     AVosM.disabled = false;
     Pret.hidden = false;
