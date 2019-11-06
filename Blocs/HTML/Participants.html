@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../CSS/Participants.css"/>
+    <script src="../JS/Participants.js"></script>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -40,7 +41,7 @@
           <button id="Bt_AddPerson" type="button" data-toggle="modal" data-target="#exampleModal">Add a person</button>
         </div>
         <div id="Content_Content" class="alert alert-danger">
-            <table>
+            <table id="InfoTable">
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <!--<tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
@@ -60,13 +61,13 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div id="Informations_Participants" class="col-12 alert alert-info modal-content">
-        <input type="text" name="firstname">
+        <input id="FormFirstName" type="text" name="firstname">
         Firstname<br><br>
-        <input type="text" name="lastname">
+        <input id="FormLastName" type="text" name="lastname">
         Last name<br><br>
-        <input type="text" name="Email">
+        <input id="FormEmail" type="text" name="Email">
         Email<br><br>
-        <SELECT name="Class" size="1">
+        <SELECT id="FormClass" name="Class" size="1">
             <OPTION>...
             <OPTION>Maturity
             <OPTION>CFC
@@ -87,5 +88,4 @@
 
 
 </body>
-<script src="../JS/Participants.js"></script>
 </html>
