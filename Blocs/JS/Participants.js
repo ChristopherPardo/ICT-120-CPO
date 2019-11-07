@@ -3,10 +3,25 @@ document.addEventListener('DOMContentLoaded', init)
 var nb_line = 0
 
 function init(){
-  Bt_Save.addEventListener("click", FormSave)
+  Bt_Save.addEventListener("click", FormCheck)
+  //Bt_Save.addEventListener("click", FormSave)
   Bt_Del.addEventListener("click", DelPerson)
 }
-s
+
+function FormCheck(){
+  var InfoTrue = true
+  if(FormFirstName.value.length == 0){
+    FormFirstName.classList.add("InfoWrong")
+    InfoTrue = false
+  }
+  if(FormLastName.value.length == 0){
+    FormLastName.classList.add("InfoWrong")
+    InfoTrue = false
+  }
+  if(FormEmail)
+
+}
+
 function FormSave(){
   alert("Start FormSave");
   nb_line++
@@ -34,7 +49,7 @@ function FormSave(){
 function DelPerson() {
   for (var i = 1; i <= nb_line; i++) {
     if (document.getElementById("check" + i).checked){
-      alert(i)
+    //ne fonctionne pas  document.getElementById("tr"+i).remove
     }
   }
 }
