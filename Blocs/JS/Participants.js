@@ -4,27 +4,64 @@ var nb_line = 0
 
 function init(){
   Bt_Save.addEventListener("click", FormCheck)
-  //Bt_Save.addEventListener("click", FormSave)
+  Pht_Carrel.addEventListener("click", IntraCarrel)
+  Pht_Benzonana.addEventListener("click", IntraBenzo)
   Bt_Del.addEventListener("click", DelPerson)
 }
 
+function IntraCarrel() {
+  document.location.href="http://intranet.cpnv.ch/maitres_principaux/xcl"
+}
+
+function IntraBenzo() {
+  document.location.href="http://intranet.cpnv.ch/enseignants/pba"
+}
+
 function FormCheck(){
-  var InfoTrue = true
+  var InfoTrue = 0
   if(FormFirstName.value.length == 0){
     FormFirstName.classList.add("InfoWrong")
-    InfoTrue = false
+    InfoTrue = 1
   }
+  else{
+    FormFirstName.classList.remove("InfoWrong")
+  }
+
   if(FormLastName.value.length == 0){
     FormLastName.classList.add("InfoWrong")
-    InfoTrue = false
+    InfoTrue = 1
   }
-  if(FormEmail)
+  else{
+    FormLastName.classList.remove("InfoWrong")
+  }
+
+  if(FormEmail.value.length < 9){
+    FormEmail.classList.add("InfoWrong")
+    InfoTrue = 1
+  }
+  else{
+    FormEmail.classList.remove("InfoWrong")
+  }
+
+  if(FormClass.value == "..."){
+    FormClass.classList.add("InfoWrong")
+    InfoTrue = 1
+  }
+  else{
+    FormClass.classList.remove("InfoWrong")
+  }
+
+  if(InfoTrue == 0){
+    FormSave()
+    FormFirstName.value = ""
+    FormLastName.value = ""
+    FormEmail.value = "@cpnv.ch"
+    FormClass.value = "..."
+  }
 
 }
 
 function FormSave(){
-  alert("Start FormSave");
-  nb_line++
   tr = document.createElement("tr")
   tr.id = "line" + nb_line
   a = document.createElement("a")
@@ -47,11 +84,13 @@ function FormSave(){
 }
 
 function DelPerson() {
-  for (var i = 1; i <= nb_line; i++) {
-    if (document.getElementById("check" + i).checked){
-    //ne fonctionne pas  document.getElementById("tr"+i).remove
+  checkboxes = document.querySelectorAll('input[type="checkbox"]')
+  checkboxes.forEach(function (chk) {
+    if (chk.checked){
+      tr = chk.parentNode.parentNode
+      tr.parentNode.removeChild(tr)
     }
-  }
+  })
 }
 /*
 button = event.target   // La cible ('target') de l'événement est le bouton (un élément du DOM)

@@ -25,3 +25,7 @@ th, td {
 .InfoWrong{
   background-color: rgb(255, 128, 128);
 }
+
+#Pht_Carrel,#Pht_Benzonana{
+    cursor: pointer;
+}
