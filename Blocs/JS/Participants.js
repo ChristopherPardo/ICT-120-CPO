@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', init)
 
 var nb_line = 0
+var mailto_link = 'mailto:'
 
 function init(){
   Bt_Save.addEventListener("click", FormCheck)
@@ -8,8 +9,10 @@ function init(){
   Pht_Carrel.addEventListener("click", IntraCarrel)
   Pht_Benzonana.addEventListener("click", IntraBenzo)
   Bt_Del.addEventListener("click", DelPerson)
+  Bt_SendMail.addEventListener("click", SendMail)
   FormFirstName.addEventListener("keyup", Initials)
   FormLastName.addEventListener("keyup", Initials)
+  SelectClass.addEventListener("change", ClassSelection)
   /*Bts_Edit = document.getElementsByClassName("Bt_Edit")
   Bts_Edit.addEventListener("click", Edit_Form)
   Attente de la réponse de Carrel*/
@@ -45,6 +48,27 @@ function Initials() {
     initiales6.value = ini.toUpperCase();*/
 }
 
+function ClassSelection(){
+  if(SelectClass.value != "All"){
+    alert(SelectClass.value)
+    lines = document.querySelectorAll('tr')
+    lines.forEach(function (trh) {
+      if (trh.lastChild.previousSibling.previousSibling.previousSibling.innerText != SelectClass.value){
+        trh.hidden = true
+      }
+      else {
+        trh.hidden = false
+      }
+    })
+  }
+  else {
+    lines = document.querySelectorAll('tr')
+    lines.forEach(function (trh) {
+    trh.hidden = false
+    })
+  }
+}
+
 function FormCheck(){
   var InfoTrue = 0
   if(FormFirstName.value.length == 0){
@@ -61,6 +85,14 @@ function FormCheck(){
   }
   else{
     FormLastName.classList.remove("InfoWrong")
+  }
+
+  if(FormInitials.value.length != 3){
+    FormInitials.classList.add("InfoWrong")
+    InfoTrue = 1
+  }
+  else{
+    FormInitials.classList.remove("InfoWrong")
   }
 
   if(FormEmail.value.length < 9){
@@ -83,6 +115,7 @@ function FormCheck(){
     FormSave()
     FormFirstName.value = ""
     FormLastName.value = ""
+    FormInitials.value =""
     FormEmail.value = "@cpnv.ch"
     FormClass.value = "..."
   }
@@ -98,7 +131,9 @@ function FormSave(){
   td_Class = document.createElement("td")
   td_Email = document.createElement("td")
   td_Intra = document.createElement("td")
+  icone_Intra = document.createElement("span")
   td_Edit = document.createElement("td")
+  icone_Edit = document.createElement("span")
 
   inp_Check.type = "checkbox"
   td_LastName.innerText = FormLastName.value
@@ -106,8 +141,16 @@ function FormSave(){
   td_Initials.innerText = FormInitials.value
   td_Class.innerText = FormClass.value
   td_Email.innerText = FormEmail.value
-  //td_Intra.innerText =
-  td_Edit.innerText = "✎"
+  icone_Intra.classList.add("glyphicon")
+  icone_Intra.classList.add("glyphicon-user")
+  icone_Edit.classList.add("glyphicon")
+  icone_Edit.classList.add("glyphicon-pencil")
+
+  //td_Email.classList.add("Mail")
+  td_Email.id = "Mail"
+
+  td_Edit.id = "Edit_" + FormInitials.value
+  td_Edit.classList.add("Bt_Intra")
 
   td_Edit.id = "Edit_" + FormInitials.value
   td_Edit.classList.add("Bt_Edit")
@@ -119,7 +162,9 @@ function FormSave(){
   tr.appendChild(td_Initials)
   tr.appendChild(td_Class)
   tr.appendChild(td_Email)
-  //td.appendChild("td_Intra")
+  td_Intra.appendChild(icone_Intra)
+  tr.appendChild(td_Intra)
+  td_Edit.appendChild(icone_Edit)
   tr.appendChild(td_Edit)
   InfoTable.appendChild(tr)
 }
@@ -154,6 +199,23 @@ function DelPerson() {
       tr.parentNode.removeChild(tr)
     }
   })
+}
+
+function SendMail(){
+  checkboxes = document.querySelectorAll('input[type="checkbox"]')
+  checkboxes.forEach(function (chk) {
+    if (chk.checked){
+      var email = chk.parentNode.parentNode.lastChild.previousSibling.previousSibling
+      mailto_link += email.innerText + ";"
+
+    }
+  })
+  window = window.open(mailto_link, 'emailWindow')
+  if (window && window.open && !window.closed){
+      window.close()
+  }
+  email = ""
+  mailto_link = 'mailto:'
 }
 /*
 button = event.target   // La cible ('target') de l'événement est le bouton (un élément du DOM)

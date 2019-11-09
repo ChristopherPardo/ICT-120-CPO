@@ -29,3 +29,7 @@ th, td {
 #Title_Logo,#Pht_Carrel,#Pht_Benzonana,.Bt_Edit{
     cursor: pointer;
 }
+
+.glyphicon{position:relative;top:1px;display:inline-block;font-family:"Glyphicons Halflings";font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.glyphicon-pencil:before{content:"\270f"}
+.glyphicon-user:before{content:"\e008"}
