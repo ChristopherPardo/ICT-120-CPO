@@ -10,6 +10,9 @@ function init(){
   Bt_Del.addEventListener("click", DelPerson)
   FormFirstName.addEventListener("keyup", Initials)
   FormLastName.addEventListener("keyup", Initials)
+  /*Bts_Edit = document.getElementsByClassName("Bt_Edit")
+  Bts_Edit.addEventListener("click", Edit_Form)
+  Attente de la réponse de Carrel*/
 }
 
 function CpnvSite(){
@@ -92,6 +95,7 @@ function FormSave(){
   td_LastName = document.createElement("td")
   td_FirstName = document.createElement("td")
   td_Initials = document.createElement("td")
+  td_Class = document.createElement("td")
   td_Email = document.createElement("td")
   td_Intra = document.createElement("td")
   td_Edit = document.createElement("td")
@@ -100,11 +104,24 @@ function FormSave(){
   td_LastName.innerText = FormLastName.value
   td_FirstName.innerText = FormFirstName.value
   td_Initials.innerText = FormInitials.value
+  td_Class.innerText = FormClass.value
   td_Email.innerText = FormEmail.value
-  /*td_Intra.innerText =
-  td_Edit.innerText =*/
+  //td_Intra.innerText =
+  td_Edit.innerText = "✎"
 
-  
+  td_Edit.id = "Edit_" + FormInitials.value
+  td_Edit.classList.add("Bt_Edit")
+
+  td_Check.appendChild(inp_Check)
+  tr.appendChild(td_Check)
+  tr.appendChild(td_LastName)
+  tr.appendChild(td_FirstName)
+  tr.appendChild(td_Initials)
+  tr.appendChild(td_Class)
+  tr.appendChild(td_Email)
+  //td.appendChild("td_Intra")
+  tr.appendChild(td_Edit)
+  InfoTable.appendChild(tr)
 }
 /*function FormSave(){
   tr = document.createElement("tr")
@@ -124,6 +141,10 @@ function FormSave(){
   tr.appendChild(td2)
   InfoTable.appendChild(tr)
 }*/
+
+function Edit_Form(){
+  alert("test")
+}
 
 function DelPerson() {
   checkboxes = document.querySelectorAll('input[type="checkbox"]')
