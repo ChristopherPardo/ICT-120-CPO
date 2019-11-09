@@ -5,6 +5,7 @@ var mailto_link = 'mailto:'
 
 function init(){
   Bt_Save.addEventListener("click", FormCheck)
+  Bt_Undo.addEventListener("click", FormDel)
   Title_Logo.addEventListener("click", CpnvSite)
   Pht_Carrel.addEventListener("click", IntraCarrel)
   Pht_Benzonana.addEventListener("click", IntraBenzo)
@@ -95,7 +96,8 @@ function FormCheck(){
     FormInitials.classList.remove("InfoWrong")
   }
 
-  if(FormEmail.value.length < 9){
+  var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+  if(!regex.test(FormEmail.value)){
     FormEmail.classList.add("InfoWrong")
     InfoTrue = 1
   }
@@ -113,14 +115,24 @@ function FormCheck(){
 
   if(InfoTrue == 0){
     FormSave()
-    FormFirstName.value = ""
-    FormLastName.value = ""
-    FormInitials.value =""
-    FormEmail.value = "@cpnv.ch"
-    FormClass.value = "..."
+    FormDel()
   }
-
 }
+
+function FormDel(){
+  FormFirstName.value = ""
+  FormLastName.value = ""
+  FormInitials.value =""
+  FormEmail.value = "@cpnv.ch"
+  FormClass.value = "..."
+
+  FormFirstName.classList.remove("InfoWrong")
+  FormLastName.classList.remove("InfoWrong")
+  FormInitials.classList.remove("InfoWrong")
+  FormEmail.classList.remove("InfoWrong")
+  FormClass.classList.remove("InfoWrong")
+}
+
 function FormSave(){
   tr = document.createElement("tr")
   td_Check = document.createElement("td")
@@ -132,6 +144,7 @@ function FormSave(){
   td_Email = document.createElement("td")
   td_Intra = document.createElement("td")
   icone_Intra = document.createElement("span")
+  link_Intra = document.createElement("a")
   td_Edit = document.createElement("td")
   icone_Edit = document.createElement("span")
 
@@ -141,12 +154,12 @@ function FormSave(){
   td_Initials.innerText = FormInitials.value
   td_Class.innerText = FormClass.value
   td_Email.innerText = FormEmail.value
-  icone_Intra.classList.add("glyphicon")
-  icone_Intra.classList.add("glyphicon-user")
+  link_Intra.text = "☞"
+  intra_Name = 
+  link_Intra.href = "http://intranet.cpnv.ch/etudiants/" + FormFirstName.value + "_" + FormLastName.value
   icone_Edit.classList.add("glyphicon")
   icone_Edit.classList.add("glyphicon-pencil")
 
-  //td_Email.classList.add("Mail")
   td_Email.id = "Mail"
 
   td_Edit.id = "Edit_" + FormInitials.value
@@ -162,7 +175,7 @@ function FormSave(){
   tr.appendChild(td_Initials)
   tr.appendChild(td_Class)
   tr.appendChild(td_Email)
-  td_Intra.appendChild(icone_Intra)
+  td_Intra.appendChild(link_Intra)
   tr.appendChild(td_Intra)
   td_Edit.appendChild(icone_Edit)
   tr.appendChild(td_Edit)
