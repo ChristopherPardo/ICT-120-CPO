@@ -18,7 +18,9 @@ function init(){
   Bt_Del.addEventListener("click", DelPerson)
   Bt_SendMail.addEventListener("click", SendMail)
   FormFirstName.addEventListener("keyup", Initials)
+  FormFirstName.addEventListener("keyup", FirstName_Mail)
   FormLastName.addEventListener("keyup", Initials)
+  FormLastName.addEventListener("keyup", Lastname_Mail)
   SelectClass.addEventListener("change", ClassSelection)
   /*Bts_Edit = document.getElementsByClassName("Bt_Edit")
   Bts_Edit.addEventListener("click", Edit_Form)
@@ -124,11 +126,19 @@ function FormCheck(){
   }
 }
 
+function FirstName_Mail(){
+  FormEmail.value = FormFirstName.value + "." + "@cpnv.ch"
+}
+
+function Lastname_Mail(){
+  FormEmail.value =  FormFirstName.value + "." + FormLastName.value + "@cpnv.ch"
+}
+
 function FormDel(){
   FormFirstName.value = ""
   FormLastName.value = ""
   FormInitials.value =""
-  FormEmail.value = "@cpnv.ch"
+  FormEmail.value = ""
   FormClass.value = "..."
 
   FormFirstName.classList.remove("InfoWrong")
@@ -160,8 +170,11 @@ function FormSave(){
   td_Class.innerText = FormClass.value
   td_Email.innerText = FormEmail.value
   link_Intra.text = "☞"
-  //intra_Name =
-  link_Intra.href = "http://intranet.cpnv.ch/etudiants/" + FormFirstName.value + "_" + FormLastName.value
+  var pos = FormEmail.value.indexOf("@");
+  intra_Name = FormEmail.value.substr(0,pos);
+  pos = FormEmail.value.indexOf(".")
+  intra_Name = intra_Name.replace('.', '_')
+  link_Intra.href = "http://intranet.cpnv.ch/etudiants/" + intra_Name//+ FormFirstName.value + "_" + FormLastName.value
   icone_Edit.classList.add("glyphicon")
   icone_Edit.classList.add("glyphicon-pencil")
 
