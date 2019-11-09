@@ -4,9 +4,16 @@ var nb_line = 0
 
 function init(){
   Bt_Save.addEventListener("click", FormCheck)
+  Title_Logo.addEventListener("click", CpnvSite)
   Pht_Carrel.addEventListener("click", IntraCarrel)
   Pht_Benzonana.addEventListener("click", IntraBenzo)
   Bt_Del.addEventListener("click", DelPerson)
+  FormFirstName.addEventListener("keyup", Initials)
+  FormLastName.addEventListener("keyup", Initials)
+}
+
+function CpnvSite(){
+  document.location.href="https://www.cpnv.ch/"
 }
 
 function IntraCarrel() {
@@ -15,6 +22,24 @@ function IntraCarrel() {
 
 function IntraBenzo() {
   document.location.href="http://intranet.cpnv.ch/enseignants/pba"
+}
+
+function Initials() {
+    var ini = FormFirstName.value.substr(0,1)
+    ini += FormLastName.value.substr(0,1)
+    ini += FormLastName.value.substr(FormLastName.value.length -1, 1)
+    FormInitials.value = ini.toUpperCase()
+
+    /*var pos = name6.value.indexOf(" ");
+    if(pos != -1) {
+        ini += name6.value.substr(pos + 1, 1);
+    }
+    var longueur = name6.value.length;
+    if (name6.value.indexOf(" ") != -1 && name6.value.substr(longueur -1, 1) != name6.value.substr(pos + 1, 1)){
+        ini += name6.value.substr(longueur -1, 1);
+    }
+
+    initiales6.value = ini.toUpperCase();*/
 }
 
 function FormCheck(){
@@ -60,28 +85,45 @@ function FormCheck(){
   }
 
 }
-
 function FormSave(){
   tr = document.createElement("tr")
-  tr.id = "line" + nb_line
+  td_Check = document.createElement("td")
+  inp_Check = document.createElement("input")
+  td_LastName = document.createElement("td")
+  td_FirstName = document.createElement("td")
+  td_Initials = document.createElement("td")
+  td_Email = document.createElement("td")
+  td_Intra = document.createElement("td")
+  td_Edit = document.createElement("td")
+
+  inp_Check.type = "checkbox"
+  td_LastName.innerText = FormLastName.value
+  td_FirstName.innerText = FormFirstName.value
+  td_Initials.innerText = FormInitials.value
+  td_Email.innerText = FormEmail.value
+  /*td_Intra.innerText =
+  td_Edit.innerText =*/
+
+  
+}
+/*function FormSave(){
+  tr = document.createElement("tr")
   a = document.createElement("a")
   a.text = FormLastName.value
   a.href = "http://intranet.cpnv.ch/etudiants/" + FormFirstName.value +"_"+ FormLastName.value
   td1 = document.createElement("td")
-  //td1.innerText =
   td1.appendChild(a)
   td2 = document.createElement("td")
   td2.innerText = FormFirstName.value
   td3 = document.createElement("td")
   chk3 = document.createElement("input")
-  chk3.id = "check" + nb_line
   chk3.type = "checkbox"
   tr.appendChild(td3)
   td3.appendChild(chk3)
   tr.appendChild(td1)
   tr.appendChild(td2)
   InfoTable.appendChild(tr)
-}
+}*/
 
 function DelPerson() {
   checkboxes = document.querySelectorAll('input[type="checkbox"]')

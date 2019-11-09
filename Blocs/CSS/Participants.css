@@ -26,6 +26,6 @@ th, td {
   background-color: rgb(255, 128, 128);
 }
 
-#Pht_Carrel,#Pht_Benzonana{
+#Title_Logo,#Pht_Carrel,#Pht_Benzonana,.Bt_Edit{
     cursor: pointer;
 }
