@@ -1,8 +1,14 @@
+<!--
+  Christopher pardo
+  09.11.2019
+  Voyage_Participants
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Participants</title>
     <link rel="stylesheet" type="text/css" href="../CSS/Participants.css"/>
     <script src="../JS/Participants.js"></script>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
@@ -13,10 +19,10 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css">
 </head>
 <body>
-<div id="title" class="row col-12 alert alert-primary m-0">
+<div id="title" class="row col-12 m-0 p-2">
     <img src="../IMG/logo2lignes_vert.png" id="Title_Logo" height="55" width="109.75"/>
 </div>
-<div id="Menu" class="col-12 alert alert-secondary m-0">
+<div id="Menu" class="alert alert-secondary col-12 m-2">
     <center>
         <button  id="Bt_Menu" type="button" class="btn">Menu</button>
         <button id="Bt_Informations" type="button" class="btn">Informations</button>
@@ -24,12 +30,12 @@
     </center>
 </div>
 <div class="row h-75">
-    <div id="Media" class="h-100 col-lg-2 hidden-sm alert alert-warning">
+    <div id="Media" class="h-100 col-lg-2 hidden-sm p-2 m-0">
         <img id="Pht_Carrel" src="../IMG/xcl.jpg" width="100%" height="50%">
         <img id="Pht_Benzonana" src="../IMG/pba.jpg" width="100%" height="50%">
     </div>
-    <div id="Content" class="col-lg-10 col-sm-12 alert alert-success">
-        <div id="Content_Menu" class="modal-header col-12 alert alert-info">
+    <div id="Content" class="col-lg-10 col-sm-12">
+        <div id="Content_Menu" class="modal-header col-12">
           <SELECT id="SelectClass" name="nom" size="1">
             <OPTION value="All">All the members</OPTION>
             <OPTION value="Class_A">Class A</OPTION>
@@ -37,19 +43,23 @@
           </SELECT>
           <button id="Bt_AddPerson" type="button" data-toggle="modal" data-target="#exampleModal">Add a person</button>
         </div>
-        <div id="Content_Content" class="alert alert-danger madiv">
+        <div id="Content_Content" class="madiv m-2">
             <table id="InfoTable">
-                <tr><td><input type="checkbox"></td><td>Pardo</td><td>Christopher</td><td>CPO</td><td>christopher.pardo@cpnv.ch</td><td><a href"http://intranet.cpnv.ch/etudiants/Christopher_Pardo">☞</a></td><td>qw</td></tr>
-                <!--<tr><td><input type="checkbox"></td><td>Roland</td><td>Samuel</td><td>SRD</td><td>Samuel.roland@cpnv.ch</td><td><a href"http://intranet.cpnv.ch/etudiants/Samuel_Roland">☞</a></td><td><qw/td></tr>-->
+                <tr><td><input type="checkbox"></td><td>Pardo</td><td>Christopher</td><td>CPO</td><td>Class_A</td><td>christopher.pardo@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Christopher_Pardo">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>Roland</td><td>Samuel</td><td>SRD</td><td>Class_A</td><td>Samuel.roland@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Samuel_Roland">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>Jayme</td><td>Gatien</td><td>GJE</td><td>Class_A</td><td>Gatien.Jayme@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Gatien_Jayme">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>GRUBER</td><td>Adam</td><td>AGR</td><td>Class_B</td><td>Adam.Gruber@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Adam_Gruber">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>Eaaswaralingam</td><td>Kaarththigan</td><td>KEM</td><td>Class_B</td><td>Kaarththigan.Eaaswaralingam@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Kaarththigan_Eaaswaralingam">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>CUNHA-ROCHA</td><td>Dylan-David</td><td>DCA</td><td>Class_B</td><td>Dylan-David.Cunha-Rocha@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Dylan-David_CUNHA-ROCHA">☞</a></td><td>qw</td></tr>
                 <!--<tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span class="Bt_Edit glyphicon glyphicon-user"></span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
-                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>-->
+                <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr-->
             </table>
         </div>
-        <div id="Content_Foot" class="modal-footer alert alert-info">
+        <div id="Content_Foot" class="modal-footer">
           <button id="Bt_SendMail" type="button" class="btn-default">Send a Email</button>
           <button id="Bt_Del" type="button" class="btn-default">Delete</button>
         </div>
@@ -57,8 +67,8 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog alert alert-success" role="document">
-    <div id="Informations_Participants" class="col-12 alert alert-info modal-content">
+  <div class="modal-dialog" role="document">
+    <div id="Informations_Contnent" class="col-12 modal-content p-3">
         <input id="FormFirstName" type="text" name="firstname">
         Firstname<br><br>
         <input id="FormLastName" type="text" name="lastname">
@@ -73,7 +83,7 @@
           <OPTION value="Class_B">Class B</OPTION>
         </SELECT>
         Class<br><br>
-        <div id="Info_Footer" class="modal-footer alert alert-danger">
+        <div id="Info_Footer" class="modal-footer">
           <button id="Bt_Save" type="button">Save</button>
           <button id="Bt_Undo" type="button">Undo</button>
         </div>

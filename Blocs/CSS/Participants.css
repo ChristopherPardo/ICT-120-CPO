@@ -1,9 +1,8 @@
-/*#Content_Foot{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: right;
-}*/
+/*
+Christopher pardo
+09.11.2019
+Voyage_Participants
+*/
 
 html, body {
     height: 100%;
@@ -20,6 +19,11 @@ th, td {
 #Content_Content{
   overflow: auto;
   height: 525px;
+}
+
+#InfoTable{
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .InfoWrong{

@@ -1,3 +1,9 @@
+/*
+Christopher pardo
+09.11.2019
+Voyage_Participants
+*/
+
 document.addEventListener('DOMContentLoaded', init)
 
 var nb_line = 0
@@ -51,7 +57,6 @@ function Initials() {
 
 function ClassSelection(){
   if(SelectClass.value != "All"){
-    alert(SelectClass.value)
     lines = document.querySelectorAll('tr')
     lines.forEach(function (trh) {
       if (trh.lastChild.previousSibling.previousSibling.previousSibling.innerText != SelectClass.value){
@@ -155,7 +160,7 @@ function FormSave(){
   td_Class.innerText = FormClass.value
   td_Email.innerText = FormEmail.value
   link_Intra.text = "☞"
-  intra_Name = 
+  //intra_Name =
   link_Intra.href = "http://intranet.cpnv.ch/etudiants/" + FormFirstName.value + "_" + FormLastName.value
   icone_Edit.classList.add("glyphicon")
   icone_Edit.classList.add("glyphicon-pencil")
