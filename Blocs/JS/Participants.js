@@ -24,9 +24,9 @@ function init(){
   FormLastName.addEventListener("keyup", Initials)
   FormLastName.addEventListener("keyup", Lastname_Mail)
   SelectClass.addEventListener("change", ClassSelection)
-  /*Bts_Edit = document.getElementsByClassName("Bt_Edit")
-  Bts_Edit.addEventListener("click", Edit_Form)
-  Attente de la réponse de Carrel*/
+  //Bts_Edit = document.getElementsByClassName("Bt_Edit")
+  //Bts_Edit.addEventListener("click", Edit_Form)
+  //Attente de la réponse de Carrel*/
 }
 
 function Firstname_FirstMaj(){
@@ -180,6 +180,8 @@ function FormSave(){
   link_Intra = document.createElement("a")
   td_Edit = document.createElement("td")
   icone_Edit = document.createElement("span")
+  icone_Edit.innerText = "fgbhn"
+  icone_Edit.addEventListener('click', Edit_Form)
 
   inp_Check.type = "checkbox"
   td_LastName.innerText = FormLastName.value
@@ -193,16 +195,16 @@ function FormSave(){
   pos = FormEmail.value.indexOf(".")
   intra_Name = intra_Name.replace('.', '_')
   link_Intra.href = "http://intranet.cpnv.ch/etudiants/" + intra_Name//+ FormFirstName.value + "_" + FormLastName.value
-  icone_Edit.classList.add("glyphicon")
-  icone_Edit.classList.add("glyphicon-pencil")
+  //icone_Edit.classList.add("glyphicon")
+  //icone_Edit.classList.add("glyphicon-pencil")
 
-  td_Email.id = "Mail"
+  /*td_Email.id = "Mail"
 
   td_Edit.id = "Edit_" + FormInitials.value
   td_Edit.classList.add("Bt_Intra")
 
   td_Edit.id = "Edit_" + FormInitials.value
-  td_Edit.classList.add("Bt_Edit")
+  td_Edit.classList.add("Bt_Edit")*/
 
   td_Check.appendChild(inp_Check)
   tr.appendChild(td_Check)

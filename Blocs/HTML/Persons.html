@@ -5,34 +5,61 @@
     <title>Title</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+    document.addEventListener('DOMContentLoaded', init)
+
+function init()
+{
+    cmdKill1.addEventListener('click', killLine)
+    cmdKill2.addEventListener('click', killLine)
+    cmdKill3.addEventListener('click', killLine)
+    cmdAdd.addEventListener('click',addline)
+    cmdAddCol.addEventListener('click',addcol)
+}
+
+function addcol()
+{
+    rows = tblBody.children
+    for (i=0; i<rows.length ; i++)
+    {
+        tr = rows[i]
+        newtd = document.createElement('td')
+        newtd.innerText = 'Nouvelle ligne '+i
+        tr.appendChild(newtd)
+    }
+}
+
+function addline()
+{
+    newtr = document.createElement('tr')
+    newtd1 = document.createElement('td')
+    newtd1.innerText = 'Ma'
+    newtd2 = document.createElement('td')
+    newtd2.innerText = 'Dalton'
+    newtd3 = document.createElement('td')
+    newdiv = document.createElement('div')
+    newdiv.innerText = 'Supprimer'
+    newdiv.className = 'btn btn-danger'
+    newdiv.addEventListener('click',killLine)
+    newtd3.appendChild(newdiv)
+    newtr.appendChild(newtd1)
+    newtr.appendChild(newtd2)
+    newtr.appendChild(newtd3)
+    tblBody.appendChild(newtr)
+}
+// Cette fonction est appelée au click sur un élément
+
+function killLine(event) // Le paramètre event représente l'événement qui a causé l'appel à la fonction
+{
+    button = event.target   // La cible ('target') de l'événement est le bouton (un élément du DOM)
+    td = button.parentNode  // td est la cellule dans laquelle le bouton se trouve
+    tr = td.parentNode      // tr est la ligne ('row') dans laquelle la cellule se trouve
+    table = tr.parentNode   // table est la table dans laquelle la ligne se trouve
+    table.removeChild(tr)   // On enlève la ligne de la table
+}
+
+    </script>
 </head>
 <body>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    <div id="Informations_Participants" class="col-4 alert alert-info">
-        <input type="text" name="firstname">
-        First name<br><br>
-        <input type="text" name="lastname">
-        Last name<br><br>
-        <input type="text" name="Email">
-        Email<br><br>
-        <SELECT name="Class" size="1">
-            <OPTION>...
-            <OPTION>Maturity
-            <OPTION>CFC
-            <OPTION>Class A
-            <OPTION>Class B
-        </SELECT>
-        Class<br><br>
-        Picture of Yourself<br><br>
-        <button type="button">Import</button><br><br>
-        <button type="button">Save</button>
-        <button type="button">Undo</button>
-    </div>
-  </div>
-</div>
 </body>
 </html>
