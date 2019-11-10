@@ -9,18 +9,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Participants</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/Participants.css"/>
-    <script src="../JS/Participants.js"></script>
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Participants.css"/>
+    <script src="JS/Participants.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-reboot.css">
 </head>
 <body>
 <div id="title" class="row col-12 m-0 p-2">
-    <img src="../IMG/logo2lignes_vert.png" id="Title_Logo" height="55" width="109.75"/>
+    <img src="IMG/logo2lignes_vert.png" id="Title_Logo" height="55" width="109.75"/>
 </div>
 <div id="Menu" class="alert alert-secondary col-12 m-2">
     <center>
@@ -31,26 +31,26 @@
 </div>
 <div class="row h-75">
     <div id="Media" class="h-100 col-lg-2 hidden-sm p-2 m-0">
-        <img id="Pht_Carrel" src="../IMG/xcl.jpg" width="100%" height="50%">
-        <img id="Pht_Benzonana" src="../IMG/pba.jpg" width="100%" height="50%">
+        <img id="Pht_Carrel" src="IMG/xcl.jpg" width="100%" height="50%">
+        <img id="Pht_Benzonana" src="IMG/pba.jpg" width="100%" height="50%">
     </div>
     <div id="Content" class="col-lg-10 col-sm-12">
         <div id="Content_Menu" class="modal-header col-12">
           <SELECT id="SelectClass" name="nom" size="1">
             <OPTION value="All">All the members</OPTION>
-            <OPTION value="Class_A">Class A</OPTION>
-            <OPTION value="Class_B">Class B</OPTION>
+            <OPTION value="Class A">Class A</OPTION>
+            <OPTION value="Class B">Class B</OPTION>
           </SELECT>
           <button id="Bt_AddPerson" type="button" data-toggle="modal" data-target="#exampleModal">Add a person</button>
         </div>
         <div id="Content_Content" class="madiv m-2">
             <table id="InfoTable">
-                <tr><td><input type="checkbox"></td><td>Pardo</td><td>Christopher</td><td>CPO</td><td>Class_A</td><td>Christopher.Pardo@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Christopher_Pardo">☞</a></td><td class="Bt_Edit">qw</td></tr>
-                <tr><td><input type="checkbox"></td><td>Roland</td><td>Samuel</td><td>SRD</td><td>Class_A</td><td>Samuel.Roland@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Samuel_Roland">☞</a></td><td>qw</td></tr>
-                <tr><td><input type="checkbox"></td><td>Jayme</td><td>Gatien</td><td>GJE</td><td>Class_A</td><td>Gatien.Jayme@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Gatien_Jayme">☞</a></td><td>qw</td></tr>
-                <tr><td><input type="checkbox"></td><td>GRUBER</td><td>Adam</td><td>AGR</td><td>Class_B</td><td>Adam.Gruber@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Adam_Gruber">☞</a></td><td>qw</td></tr>
-                <tr><td><input type="checkbox"></td><td>Eaaswaralingam</td><td>Kaarththigan</td><td>KEM</td><td>Class_B</td><td>Kaarththigan.Eaaswaralingam@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Kaarththigan_Eaaswaralingam">☞</a></td><td>qw</td></tr>
-                <tr><td><input type="checkbox"></td><td>CUNHA-ROCHA</td><td>Dylan-David</td><td>DCA</td><td>Class_B</td><td>Dylan-David.Cunha-Rocha@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Dylan-David_CUNHA-ROCHA">☞</a></td><td>qw</td></tr>
+                <tr><td><input type="checkbox"></td><td>Pardo</td><td>Christopher</td><td>CPO</td><td>Class A</td><td>Christopher.Pardo@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Christopher_Pardo">Intranet</a></td></tr>
+                <tr><td><input type="checkbox"></td><td>Roland</td><td>Samuel</td><td>SRD</td><td>Class A</td><td>Samuel.Roland@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Samuel_Roland">Intranet</a></td></tr>
+                <tr><td><input type="checkbox"></td><td>Jayme</td><td>Gatien</td><td>GJE</td><td>Class A</td><td>Gatien.Jayme@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Gatien_Jayme">Intranet</a></td></tr>
+                <tr><td><input type="checkbox"></td><td>GRUBER</td><td>Adam</td><td>AGR</td><td>Class B</td><td>Adam.Gruber@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Adam_Gruber">Intranet</a></td></tr>
+                <tr><td><input type="checkbox"></td><td>Eaaswaralingam</td><td>Kaarththigan</td><td>KEM</td><td>Class B</td><td>Kaarththigan.Eaaswaralingam@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Kaarththigan_Eaaswaralingam">Intranet</a></td></tr>
+                <tr><td><input type="checkbox"></td><td>CUNHA-ROCHA</td><td>Dylan-David</td><td>DCA</td><td>Class B</td><td>Dylan-David.Cunha-Rocha@cpnv.ch</td><td><a href="http://intranet.cpnv.ch/etudiants/Dylan-David_CUNHA-ROCHA">Intranet</a></td></tr>
                 <!--<tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span class="Bt_Edit glyphicon glyphicon-user"></span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
                 <tr><td><input type="checkbox"></td><td>Name</td><td>Firstname</td><td>email</td><td><span id="">✎</span></td></tr>
@@ -79,8 +79,8 @@
         Email<br><br>
         <SELECT id="FormClass" name="Class" size="1">
           <OPTION value="...">...</OPTION>
-          <OPTION value="Class_A">Class A</OPTION>
-          <OPTION value="Class_B">Class B</OPTION>
+          <OPTION value="Class A">Class A</OPTION>
+          <OPTION value="Class B">Class B</OPTION>
         </SELECT>
         Class<br><br>
         <div id="Info_Footer" class="modal-footer">
