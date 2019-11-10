@@ -1,6 +1,6 @@
 /*
 Christopher pardo
-09.11.2019
+10.11.2019
 Voyage_Participants
 */
 
@@ -17,14 +17,24 @@ function init(){
   Pht_Benzonana.addEventListener("click", IntraBenzo)
   Bt_Del.addEventListener("click", DelPerson)
   Bt_SendMail.addEventListener("click", SendMail)
+  FormFirstName.addEventListener("keyup", Firstname_FirstMaj)
   FormFirstName.addEventListener("keyup", Initials)
   FormFirstName.addEventListener("keyup", FirstName_Mail)
+  FormLastName.addEventListener("keyup", Lastname_FirstMaj)
   FormLastName.addEventListener("keyup", Initials)
   FormLastName.addEventListener("keyup", Lastname_Mail)
   SelectClass.addEventListener("change", ClassSelection)
   /*Bts_Edit = document.getElementsByClassName("Bt_Edit")
   Bts_Edit.addEventListener("click", Edit_Form)
   Attente de la réponse de Carrel*/
+}
+
+function Firstname_FirstMaj(){
+  FormFirstName.value = FormFirstName.value.substr(0,1).toUpperCase() +	FormFirstName.value.substr(1,FormFirstName.value.length).toLowerCase()
+}
+
+function Lastname_FirstMaj(){
+  FormLastName.value = FormLastName.value.substr(0,1).toUpperCase() +	FormLastName.value.substr(1,FormLastName.value.length).toLowerCase()
 }
 
 function CpnvSite(){
@@ -119,6 +129,14 @@ function FormCheck(){
   else{
     FormClass.classList.remove("InfoWrong")
   }
+
+lines = document.querySelectorAll('tr')
+lines.forEach(function (trm) {
+  if(trm.lastChild.previousSibling.previousSibling.innerText == FormEmail.value){
+    alert("Cet utilisateur existe déjà")
+    InfoTrue = 1
+  }
+})
 
   if(InfoTrue == 0){
     FormSave()
@@ -233,20 +251,24 @@ function DelPerson() {
 }
 
 function SendMail(){
+  MailTo_Send = 0
   checkboxes = document.querySelectorAll('input[type="checkbox"]')
   checkboxes.forEach(function (chk) {
     if (chk.checked){
       var email = chk.parentNode.parentNode.lastChild.previousSibling.previousSibling
       mailto_link += email.innerText + ";"
+      MailTo_Send = 1
 
     }
   })
-  window = window.open(mailto_link, 'emailWindow')
-  if (window && window.open && !window.closed){
-      window.close()
-  }
-  email = ""
-  mailto_link = 'mailto:'
+  if(MailTo_Send == 1){
+    window = window.open(mailto_link, 'emailWindow')
+    if (window && window.open && !window.closed){
+        window.close()
+      }
+      email = ""
+      mailto_link = 'mailto:'
+    }
 }
 /*
 button = event.target   // La cible ('target') de l'événement est le bouton (un élément du DOM)
