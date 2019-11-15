@@ -1,0 +1,27 @@
+<!--
+    Christopher Pardo
+    Exa120
+    15.11.2019
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motivation</title>
+    <script src="JS/motivation.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/Style.css"/>
+</head>
+<body>
+<div class="container-fluid flex-column">
+    <h2>Bonjour <span id="SpanFistName">(prénom)</span> <span id="SpanLastName">(nom)</span></h2>
+    <form action="thankyou.html">
+        <label>Veuillez décrire ci-dessous votre motivation à nous rejoindre, en au minimum 30 caractères et au maximum 144</label><br>
+        <textarea id="AreaMoti" cols="60" rows="3"></textarea>
+        <div id="ErrorMoti" class="Error">Cette description est trop courte</div>
+        <div id="SizeMoti">Il vous reste <a id="SizeMotiremaining">144</a> caractères</div>
+        <input id="BtnSendMoti" disabled type="submit" value="Ok">
+    </form>
+</div>
+</body>
+</html>

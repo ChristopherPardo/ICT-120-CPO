@@ -1,0 +1,25 @@
+<!--
+    Christopher Pardo
+    Exa120
+    15.11.2019
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Style.css"/>
+    <script src="JS/index.js"></script>
+</head>
+<body>
+    <h2>Inscription au tchoukball club Ste-Croix</h2>
+    <form action="motivation.html">
+        <label>Prénom</label><input id="TxtFirstName" type="text" name="txtFirstName"><br><div id="ErrorFirstName" class="Error" hidden>Invalide: trop court</div>
+        <label>Nom</label><input id="TxtLastName" type="text" name="txtLastName"><br><div id="ErrorLastName" class="Error" hidden>Invalide: trop court</div>
+        <label>Mot de passe</label><input id="Pw1" type="password"><br><div id="ErrorPw1" class="Error" hidden>Invalide: minimum 6 caractères</div>
+        <label>Confirmation</label><input id="Pw2" type="password"><br><div id="ErrorPw2" class="Error" hidden>Invalide: différent</div>
+        <input id="BtnSend" disabled type="submit" value="Envoyer">
+    </form>
+</body>
+</html>
